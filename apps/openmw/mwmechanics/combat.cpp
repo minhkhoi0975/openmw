@@ -306,6 +306,9 @@ namespace MWMechanics
 
     float getHitChance(const MWWorld::Ptr& attacker, const MWWorld::Ptr& victim, int skillValue)
     {
+        if (attacker == getPlayer())
+            return 100.0f;
+
         MWMechanics::CreatureStats& stats = attacker.getClass().getCreatureStats(attacker);
         const MWMechanics::MagicEffects& mageffects = stats.getMagicEffects();
 

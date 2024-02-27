@@ -190,6 +190,9 @@ namespace MWMechanics
     float getSpellSuccessChance(
         const ESM::Spell* spell, const MWWorld::Ptr& actor, ESM::RefId* effectiveSchool, bool cap, bool checkMagicka)
     {
+        if (actor == getPlayer())
+            return 100.0f;
+
         // NB: Base chance is calculated here because the effective school pointer must be filled
         float baseChance = calcSpellBaseSuccessChance(spell, actor, effectiveSchool);
 
