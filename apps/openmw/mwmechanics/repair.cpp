@@ -51,7 +51,7 @@ namespace MWMechanics
 
         auto& prng = MWBase::Environment::get().getWorld()->getPrng();
         int roll = Misc::Rng::roll0to99(prng);
-        if (roll <= x)
+        //if (roll <= x)
         {
             int y = static_cast<int>(fRepairAmountMult * toolQuality * roll);
             y = std::max(1, y);
@@ -75,11 +75,13 @@ namespace MWMechanics
             MWBase::Environment::get().getWindowManager()->playSound(ESM::RefId::stringRefId("Repair"));
             MWBase::Environment::get().getWindowManager()->messageBox("#{sRepairSuccess}");
         }
+        /*
         else
         {
             MWBase::Environment::get().getWindowManager()->playSound(ESM::RefId::stringRefId("Repair Fail"));
             MWBase::Environment::get().getWindowManager()->messageBox("#{sRepairFailed}");
         }
+        */
 
         // tool used up?
         if (mTool.getCellRef().getCharge() == 0)

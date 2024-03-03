@@ -579,12 +579,15 @@ MWMechanics::Alchemy::Result MWMechanics::Alchemy::createSingle()
         removeIngredients();
         return Result_RandomFailure;
     }
+
+    /*
     auto& prng = MWBase::Environment::get().getWorld()->getPrng();
     if (getAlchemyFactor() < Misc::Rng::roll0to99(prng))
     {
         removeIngredients();
         return Result_RandomFailure;
     }
+    */
 
     addPotion(mPotionName);
 
