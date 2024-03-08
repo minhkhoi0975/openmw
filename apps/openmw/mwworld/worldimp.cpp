@@ -2344,7 +2344,7 @@ namespace MWWorld
             || isFlying(player))
             return Rest_PlayerIsInAir;
 
-        if (currentCell->getCell()->noSleep() || player.getClass().getNpcStats(player).isWerewolf())
+        if (/* currentCell->getCell()->noSleep() || */ player.getClass().getNpcStats(player).isWerewolf()) // You should let beggars sleep, man. That's cruel to make it illegal.
             return Rest_OnlyWaiting;
 
         return Rest_Allowed;
